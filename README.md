@@ -309,12 +309,14 @@ D:\eval>c:\R-3.5.0\bin\R --encoding UTF-8 -f grading.R
     ![](https://github.com/deogtae/explainable-grade/blob/master/standard_score_histogram.svg)
     - 표준 점수를 계급 구간이 10점인 히스토그램을 출력한다.
     - 수강생 표준 점수의 전체 분포를 파악할 수 있다.
-- [grade_public.xlx](https://github.com/deogtae/explainable-grade/blob/master/grade_public.xlx)
+
+
+- [grade_public.xlsx](https://github.com/deogtae/explainable-grade/blob/master/grade_public.xlsx)
     - 엑셀로 grade_public.csv 파일을 연 후에 grade_public.xlx 파일로 저장한다.
     - 가독성을 높이기 위해 grade_public.xlx 성적 부분에 표서식을 적용한다.
     - "삽입 -> 그림" 메뉴를 클릭하여 원점수 히스토그램 파일 total_score_histogram.svg과 표준점수 히스토그램 파일 standard_score_histogram.svg 을 엑셀 문서에 삽입한다.
     - grade_public.xlx 파일을 공개한다. 혹은 grade_public.pdf 파일을 생성하여 공개한다.
-- grade_public.pdf
+- [grade_public.pdf](https://github.com/deogtae/explainable-grade/blob/master/grade_public.pdf)
     - 엑셀에서 grade_public.xlx 파일을 연 후에, "파일 -> 인쇄" 메뉴를 클릭한 후, "설정" 에서 "가로 방향"을 선택하고, "한 페이지에 시트 맞추기"를 선택한다.
     - "프린터"에서 "Microsoft Print to PDF"을 선택한다.
     - "인쇄"를 클릭하여 "grade_public.pdf" 파일에 저장한다.
