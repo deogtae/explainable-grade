@@ -232,7 +232,7 @@ S    0 0 0 0 0 0 0 0  0  0  0 10  5
 - 이 예시 파일은 각 문항별 배점 및 문제의 등급을 나타낸다. 한 문제가 여러개의 소문제로 나뉘어져 있지만 편의상 하나의 문제로 채점하는 경우 한 문제의 등급이 여러 개가 될 수 있다. 가령, 9번 문항의 경우, 15점 배점에 D 등급의 소문제가 총 11점, C 등급의 소문제가 4점인 경우이다.
 - D 등급, C 등급, B 등급, A 등급, S 등급별 총점은 각각 27, 18, 24, 16, 15이다.
 
-### [grade_weights.csv](https://github.com/deogtae/explainable-grade/blob/master/grade_weights.csv_
+### [grade_weights.csv](https://github.com/deogtae/explainable-grade/blob/master/grade_weights.csv)
 ```
 grade    D   C    B    A
 D       90   0    0    0
@@ -298,11 +298,15 @@ D:\eval>c:\R-3.5.0\bin\R --encoding UTF-8 -f grading.R
 "등급 기준 원점수","24.3","36","55.2","70.4","85","","","","","","","","","",""
 ```
 
-- [total_score_histogram.svg](https://github.com/deogtae/explainable-grade/blob/master/total_score_histogram.svg)
+- total_score_histogram.svg
+
+    ![](https://github.com/deogtae/explainable-grade/blob/master/total_score_histogram.svg)
     - 원점수를 계급 구간이 10점인 히스토그램을 출력한다.
     - 수강생 원점수 총점의 전체 분포를 파악할 수 있다.
 
-- [standard_score_histogram.svg](https://github.com/deogtae/explainable-grade/blob/master/standard_score_histogram.svg)
+- standard_score_histogram.svg
+
+    ![](https://github.com/deogtae/explainable-grade/blob/master/standard_score_histogram.svg)
     - 표준 점수를 계급 구간이 10점인 히스토그램을 출력한다.
     - 수강생 표준 점수의 전체 분포를 파악할 수 있다.
 - [grade_public.xlx](https://github.com/deogtae/explainable-grade/blob/master/grade_public.xlx)
@@ -316,7 +320,7 @@ D:\eval>c:\R-3.5.0\bin\R --encoding UTF-8 -f grading.R
     - "인쇄"를 클릭하여 "grade_public.pdf" 파일에 저장한다.
     - "grade_public.pdf" 파일을 공개한다.
 
-### grading.py](https://github.com/deogtae/explainable-grade/blob/master/)
+### [grading.py](https://github.com/deogtae/explainable-grade/blob/master/grading.py)
 - grade.R과 동일하나 파이썬으로 작성된 프로그램이다.
 - 파이썬 (아나콘다 권장)을 설치한 후 다음과 같이 실행시킨다. 아나콘다 설치후 개발환경인 스파이더 등을 사용하여 실행시켜도 된다.
 
