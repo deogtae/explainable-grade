@@ -198,7 +198,7 @@ S 문제를 제외한 원점수 총점이 표준 점수의 100점에 해당한�
 
 채점 프로그램은 수정하지 않고 그대로 사용할 수 있도록 일반화하였으며, 이때 사용되는 데이터 파일은 다음과 같다.
 
-### score.csv
+### [score.csv](https://github.com/deogtae/explainable-grade/blob/master/score.csv)
 ```
 번호   이름        학번   1  2  3  4  5  6  7  8  9 10 11 12 13
 1   김영일   2018000001  4  4  3  4  0  4  0  4 11 18 12  0  0 
@@ -218,7 +218,7 @@ S 문제를 제외한 원점수 총점이 표준 점수의 100점에 해당한�
 - 각 문제별로 0점, 배점, 부분점수를 부여한다.
 - 결시인 경우 1번 문항의 점수로 "결시", 다른 성적으로 대체하는 경우 "대체"로 표시한다.
 
-### problem_grade.csv
+### [problem_grade.csv](https://github.com/deogtae/explainable-grade/blob/master/problem_grade.csv)
 ```
 문항  1 2 3 4 5 6 7 8  9 10 11 12 13
 배점  4 4 3 4 3 4 4 4 15 20 20 10  5
@@ -232,7 +232,7 @@ S    0 0 0 0 0 0 0 0  0  0  0 10  5
 - 이 예시 파일은 각 문항별 배점 및 문제의 등급을 나타낸다. 한 문제가 여러개의 소문제로 나뉘어져 있지만 편의상 하나의 문제로 채점하는 경우 한 문제의 등급이 여러 개가 될 수 있다. 가령, 9번 문항의 경우, 15점 배점에 D 등급의 소문제가 총 11점, C 등급의 소문제가 4점인 경우이다.
 - D 등급, C 등급, B 등급, A 등급, S 등급별 총점은 각각 27, 18, 24, 16, 15이다.
 
-### grade_weights.csv
+### [grade_weights.csv](https://github.com/deogtae/explainable-grade/blob/master/grade_weights.csv_
 ```
 grade    D   C    B    A
 D       90   0    0    0
@@ -245,7 +245,7 @@ S      100  100 100  100
 - 표준 점수로 변환하기 위한 공식을 나타낸다.
 - 앞에서 예시된 표준 점수 계산 공식을 그대로 사용할 경우 이 파일을 수정할 필요가 없다. 가령, C 등급 기준 점수는 D 등급 총점의 100% + C 등급 총점의 50% = 36점이 된다.
 
-### grading.R
+### [grading.R](https://github.com/deogtae/explainable-grade/blob/master/grading.R)
 - 점수의 집계, 통계, 시각화, 표준 점수 산출 등을 하는 R로 작성된 채점 프로그램이다.
 - 현재 디렉터리에 이 프로그램 및 앞의 3개의 입력 파일을 갖다 놓고 다음과 같이 실행시키면 grade.csv, grade_public.csv, total_score_histogram.svg, standard_score_histogram.svg 파일이 출력된다.
 - RStudio를 설치한 후 실행해도 되고, 다음과 같이 R만 설치해서 명령 프롬프트에서 바로 실행시켜도 된다.
@@ -254,7 +254,7 @@ S      100  100 100  100
 D:\eval>c:\R-3.5.0\bin\R --encoding UTF-8 -f grading.R
 ```
 
-- grade.csv
+- [grade.csv](https://github.com/deogtae/explainable-grade/blob/master/grade.csv)
     - 각 수강생별 총점 및 표준 점수와 통계 데이터가 포함된다. (통계 데이터는 성적 해석의 편의성을 위해 결시생과 대체 시험생의 점수는 포함시키지 않는다.)
     - 내부적으로 최종 성적을 제출하는데 사용된다.
 ```
@@ -276,7 +276,7 @@ D:\eval>c:\R-3.5.0\bin\R --encoding UTF-8 -f grading.R
 "","등급 기준 원점수","24.3","36","55.2","70.4","85","","","","","","","","","",""
 ```
 
-- grade_public.csv
+- [grade_public.csv](https://github.com/deogtae/explainable-grade/blob/master/grade_public.csv)
     - grade.csv와 동일하나, 성적 자료 공개를 위해서 이름 필드를 제거하고 학번 필드의 마지막 4자리만 포함시킨다.
     - 공개용 성적 자료 생성을 위한 파일이다.
 ```
@@ -298,14 +298,14 @@ D:\eval>c:\R-3.5.0\bin\R --encoding UTF-8 -f grading.R
 "등급 기준 원점수","24.3","36","55.2","70.4","85","","","","","","","","","",""
 ```
 
-- total_score_histogram.svg
+- [total_score_histogram.svg](https://github.com/deogtae/explainable-grade/blob/master/total_score_histogram.svg)
     - 원점수를 계급 구간이 10점인 히스토그램을 출력한다.
     - 수강생 원점수 총점의 전체 분포를 파악할 수 있다.
 
-- standard_score_histogram.svg
+- [standard_score_histogram.svg](https://github.com/deogtae/explainable-grade/blob/master/standard_score_histogram.svg)
     - 표준 점수를 계급 구간이 10점인 히스토그램을 출력한다.
     - 수강생 표준 점수의 전체 분포를 파악할 수 있다.
-- grade_public.xlx
+- [grade_public.xlx](https://github.com/deogtae/explainable-grade/blob/master/grade_public.xlx)
     - 엑셀로 grade_public.csv 파일을 연 후에 grade_public.xlx 파일로 저장한다.
     - 가독성을 높이기 위해 grade_public.xlx 성적 부분에 표서식을 적용한다.
     - "삽입 -> 그림" 메뉴를 클릭하여 원점수 히스토그램 파일 total_score_histogram.svg과 표준점수 히스토그램 파일 standard_score_histogram.svg 을 엑셀 문서에 삽입한다.
@@ -316,7 +316,7 @@ D:\eval>c:\R-3.5.0\bin\R --encoding UTF-8 -f grading.R
     - "인쇄"를 클릭하여 "grade_public.pdf" 파일에 저장한다.
     - "grade_public.pdf" 파일을 공개한다.
 
-### grading.py
+### grading.py](https://github.com/deogtae/explainable-grade/blob/master/)
 - grade.R과 동일하나 파이썬으로 작성된 프로그램이다.
 - 파이썬 (아나콘다 권장)을 설치한 후 다음과 같이 실행시킨다. 아나콘다 설치후 개발환경인 스파이더 등을 사용하여 실행시켜도 된다.
 
