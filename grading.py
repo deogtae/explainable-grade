@@ -5,6 +5,7 @@ import pandas as pd
 import numpy as np
 import matplotlib
 import matplotlib.pyplot as plt
+import sys
 
 ## 배점/문제 등급 파일 읽기
 
@@ -14,7 +15,7 @@ problem_grade.info()
 problem_grade
 
 if sum(problem_grade.loc["배점",:]) != 100 or not all(problem_grade.loc["배점",:] == np.sum(problem_grade.loc[["D","C","B","A","S"],:], axis=0)):
-    stop("배점 파일 오류")
+    sys.exit("배점 파일 오류")
 
 grade_score = np.sum(problem_grade.loc[["D","C","B","A","S"],:], axis=1)
 grade_score
@@ -32,7 +33,7 @@ if ((standard_score_thresholds["D"] > standard_score_thresholds["C"]) or
     (standard_score_thresholds["C"] > standard_score_thresholds["B"]) or
     (standard_score_thresholds["B"] > standard_score_thresholds["A"]) or
     (standard_score_thresholds["A"] > standard_score_thresholds["S"])):
-    stop("등급별 기준 원점수 오류")
+    sys.exit("등급별 기준 원점수 오류")
 
 ## 채점 파일 읽기, 검증
 
@@ -42,10 +43,10 @@ scores.info()
 student_num = scores.shape[0]
 problem_num = problem_grade.shape[1]
 if problem_num != scores.shape[1] - 2:
-    stop("문항 개수 오류")
+    sys.exit("문항 개수 오류")
 missed = np.sum(pd.isnull(scores), axis=1) > 0
 if not (all(missed == ((scores.iloc[:,2]=="대체") | (scores.iloc[:,2]=="결시")))):
-    stop("대체/결시 검증 오류")
+    sys.exit("대체/결시 검증 오류")
 
 ## 표준 점수 계산
 
